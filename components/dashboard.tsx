@@ -2,9 +2,10 @@
 
 import React, { useState } from "react";
 import SideBareContent from "./sidebare-content";
-import { Clock, Menu, Utensils, X } from "lucide-react";
+import { Calendar, Clock, Menu, Utensils, X } from "lucide-react";
 import { Button } from "./ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 function RestaurantDashboard() {
   // Declaration d'un state pour gerer l'affichage de la barre lateral
@@ -74,10 +75,28 @@ function RestaurantDashboard() {
             <h1 className="text-2xl font-bold md:text-3xl tracking-tight">
               Tableau de bord{" "}
             </h1>
-            <p className="text-muted foreground ">
+            <p className="text-muted-foreground">
               Bienvenue, chef! voici l'apercu de votre restaurant aujourd'hui.
             </p>
           </div>
+          {/* {onglet de Navigation} */}
+
+          <Tabs defaultValue="overview" className="space-y-6">
+            <div className="flex items-center justify-between">
+              <TabsList>
+                <TabsTrigger value="overview">Vue d'ensemble</TabsTrigger>
+                <TabsTrigger value="orders">Commande</TabsTrigger>
+                <TabsTrigger value="Reservations">Reservations</TabsTrigger>
+                <TabsTrigger value="staff">Personnel</TabsTrigger>
+              </TabsList>
+              <div className="hidden md:flex items-center gap-2">
+                <Button variant={"outline"} size={"sm"}>
+                  <Calendar className="mr-2 h-4 w-4" />
+                  Aujourd'hui
+                </Button>
+              </div>
+            </div>
+          </Tabs>
         </main>
       </div>
     </div>
