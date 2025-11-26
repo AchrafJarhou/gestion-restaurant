@@ -68,6 +68,17 @@ function RestaurantDashboard() {
             </Avatar>
           </div>
         </header>
+        {/* {contenu tableau de bord} */}
+        <main className="p-4 md:p-6">
+          <div className="mb-8">
+            <h1 className="text-2xl font-bold md:text-3xl tracking-tight">
+              Tableau de bord{" "}
+            </h1>
+            <p className="text-muted foreground ">
+              Bienvenue, chef! voici l'apercu de votre restaurant aujourd'hui.
+            </p>
+          </div>
+        </main>
       </div>
     </div>
   );

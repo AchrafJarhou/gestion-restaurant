@@ -18,7 +18,7 @@ function SideBareContent() {
   return (
     <div className="flex h-full flex-col">
       {/* entête de la barre laterale contenant le logo et le nom */}
-      <div className="flex items-center gap-2 border-b border-zinc-200 p-4 dark:border-zinc-800 lg:h-16">
+      <div className="hidden lg:flex items-center gap-2 border-b border-zinc-200 p-4 dark:border-zinc-800 lg:h-16">
         <Utensils className="h-6 w-6 text-amber-500" />
         <span className="text-lg font-semibold">Gourmet Hub</span>
       </div>
