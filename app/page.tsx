@@ -1,5 +1,5 @@
-import Image from "next/image";
+import RestaurantDashboard from "@/components/dashboard";
 
 export default function Home() {
-  return <div>hello next</div>;
+  return <RestaurantDashboard />;
 }
