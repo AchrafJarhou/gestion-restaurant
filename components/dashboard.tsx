@@ -2,10 +2,20 @@
 
 import React, { useState } from "react";
 import SideBareContent from "./sidebare-content";
-import { Calendar, Clock, Menu, Utensils, X } from "lucide-react";
+import {
+  Calendar,
+  Clock,
+  DollarSign,
+  Menu,
+  ShoppingBag,
+  Users,
+  Utensils,
+  X,
+} from "lucide-react";
 import { Button } from "./ui/button";
 import { Avatar, AvatarFallback } from "@/components/ui/avatar";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
+import StatsCard from "./statsCard";
 
 function RestaurantDashboard() {
   // Declaration d'un state pour gerer l'affichage de la barre lateral
@@ -96,6 +106,34 @@ function RestaurantDashboard() {
                 </Button>
               </div>
             </div>
+            <TabsContent value="overview" className="space-y-6">
+              <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+                <StatsCard
+                  title={"Chiffre d'affaires"}
+                  value={"2,850 €"}
+                  description={"+18% par rapport à hier"}
+                  icon={<DollarSign className="h-5 w-5 text-emerald-500" />}
+                />
+                <StatsCard
+                  title={"Commandes"}
+                  value={"145"}
+                  description={"+24% par rapport à hier"}
+                  icon={<ShoppingBag className="h-5 w-5 text-blue-500" />}
+                />
+                <StatsCard
+                  title={"Clients"}
+                  value={"289"}
+                  description={"+12% par rapport à hier"}
+                  icon={<Users className="h-5 w-5 text-violet-500" />}
+                />
+                <StatsCard
+                  title={"Réservations"}
+                  value={"32"}
+                  description={"+8% par rapport à hier"}
+                  icon={<Calendar className="h-5 w-5 text-amber-500" />}
+                />
+              </div>
+            </TabsContent>
           </Tabs>
         </main>
       </div>
